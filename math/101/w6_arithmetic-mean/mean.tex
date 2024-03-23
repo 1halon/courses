@@ -1,0 +1,253 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Define Article %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Using Packages %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{empheq}
+\usepackage{mdframed}
+\usepackage{booktabs}
+\usepackage{lipsum}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{psfrag}
+\usepackage{pgfplots}
+\usepackage{bm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Other Settings
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% Page Setting %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\geometry{a4paper}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% Define some useful colors %%%%%%%%%%%%%%%%%%%%%%%%%%
+\definecolor{ocre}{RGB}{243,102,25}
+\definecolor{mygray}{RGB}{243,243,244}
+\definecolor{deepGreen}{RGB}{26,111,0}
+\definecolor{shallowGreen}{RGB}{235,255,255}
+\definecolor{deepBlue}{RGB}{61,124,222}
+\definecolor{shallowBlue}{RGB}{235,249,255}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% Define an orangebox command %%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand\orangebox[1]{\fcolorbox{ocre}{mygray}{\hspace{1em}#1\hspace{1em}}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% English Environments %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newtheoremstyle{mytheoremstyle}{3pt}{3pt}{\normalfont}{0cm}{\rmfamily\bfseries}{}{1em}{{\color{black}\thmname{#1}~\thmnumber{#2}}\thmnote{\,--\,#3}}
+\newtheoremstyle{myproblemstyle}{3pt}{3pt}{\normalfont}{0cm}{\rmfamily\bfseries}{}{1em}{{\color{black}\thmname{#1}~\thmnumber{#2}}\thmnote{\,--\,#3}}
+\theoremstyle{mytheoremstyle}
+\newmdtheoremenv[linewidth=1pt,backgroundcolor=shallowGreen,linecolor=deepGreen,leftmargin=0pt,innerleftmargin=20pt,innerrightmargin=20pt,]{theorem}{Theorem}[section]
+\theoremstyle{mytheoremstyle}
+\newmdtheoremenv[linewidth=1pt,backgroundcolor=shallowBlue,linecolor=deepBlue,leftmargin=0pt,innerleftmargin=20pt,innerrightmargin=20pt,]{definition}{Definition}[section]
+\theoremstyle{myproblemstyle}
+\newmdtheoremenv[linecolor=black,leftmargin=0pt,innerleftmargin=10pt,innerrightmargin=10pt,]{problem}{Problem}[section]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Plotting Settings %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepgfplotslibrary{colorbrewer}
+\pgfplotsset{width=8cm,compat=1.9}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Title & Author %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{Arithmetic Mean}
+\author{Halil Yiğit KOÇHAN}
+\date{December 12, 2023}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+    \maketitle
+
+\section{Aritmetik Ortalama}
+
+$$ x_1 + ... + x_n $$
+
+$$ A.O = \frac{x_1 + ... + x_n}{n} $$
+
+\begin{problem}[4 tane sayının aritmetik ortalaması 20 ise bu sayılara hangi sayı eklenirse aritmetik ortamaları 23 olur?]
+\end{problem}
+
+\begin{proof}[\textit{ Sol. }]
+  \begin{equation*}
+    \begin{aligned}[t]
+      20 = \frac{x + y + z + w}{4}\\
+      x + y + z + w = x' = 80
+    \end{aligned}
+    \qquad\qquad
+    \begin{aligned}[t]
+      23 = \frac{x' + h}{5}\\
+      x' + h = 115\\
+      h = 35
+    \end{aligned}
+  \end{equation*}
+\end{proof}
+
+\begin{problem}[\text{[1, 11]} aralığındaki 11 doğal sayıdan 1'i atılıyor. Kalan sayıların ortalaması çıkartılan sayıya eşitse çıkartılan sayı kaçtır?]
+\end{problem}
+
+\begin{proof}[\textit{ Sol. }]
+  \begin{equation*}
+    \begin{aligned}[t]
+      \frac{\text{Sayı} - x}{10} &= x\\
+      \frac{11 \times 12}{2} &= 66 = \text{Sayı}
+    \end{aligned}
+    \qquad\qquad
+    \begin{aligned}[t]
+      \frac{66 - x}{10} &= x\\
+      66 - x &= 10x\\
+      x &= 6
+    \end{aligned}
+  \end{equation*}
+\end{proof}
+
+\begin{problem}[Notların 100 üzerinden değerlendirildiği sistemde, ilk sınavdan 40 alan bir öğrenci en az kaç sınava girerse ortalaması 95 olur?]
+\end{problem}
+
+\begin{proof}[\textit{ Sol. }]
+  \begin{equation*}
+    \begin{aligned}[t]
+      \frac{40 + 100x}{x + 1} = 95
+    \end{aligned}
+    \qquad\qquad
+    \begin{aligned}[t]
+      &95x + 95 = 40 + 100x\\
+      &x = 11
+    \end{aligned}
+  \end{equation*}
+\end{proof}
+
+\section{Geometrik Ortalama}
+
+$$ \sqrt[n]{x_1 \times x_2 \times x_3 \times ... \times x_n} $$
+
+\begin{problem}[a ile b'nin $ G.O = 2 $, b ile c'nin $ G.O = \sqrt{2} $, a ile c'nin $ G.O = 2\sqrt{2} $ ise $ a, b, c $'nin $ G.O = ? $]
+\end{problem}
+
+\begin{proof}[\textit{ Sol. }]
+  \begin{equation*}
+    \begin{aligned}[t]
+      \sqrt{a \times b} &= 2\\
+      \sqrt{b \times c} &= \sqrt{2}\\
+      \sqrt{c \times a} &= 2\sqrt{2}
+    \end{aligned}
+    \qquad\qquad
+    \begin{aligned}[t]
+      a \times b &= 4\\
+      b \times c &= 2\\
+      c \times a &= 8
+    \end{aligned}
+    \qquad\qquad
+    \begin{aligned}[t]
+      a^2 \times b^2 \times c^2 &= 64\\
+      a \times b \times c &= 8\\
+      \sqrt[3]{a \times b \times c} &= 2
+    \end{aligned}
+  \end{equation*}
+\end{proof}
+
+\begin{problem}[Eli, Derya ve Elif; 168 TL'yi sırasıyla $ 3, 5, 6 $ ile orantılı şekilde paylaşıyorlar. Elif = ?]
+\end{problem}
+
+\begin{proof}[\textit{ Sol. }]
+  \begin{equation*}
+    \begin{aligned}[t]
+      &\frac{a}{3} = \frac{b}{5} = \frac{c}{6} = k\\
+      &a = 3k\\
+      &b = 5k\\
+      &c = 6k
+    \end{aligned}
+    \qquad\qquad
+    \begin{aligned}[t]
+      &14k = 168\\
+      &k = 12\\
+      &6k = 72
+    \end{aligned}
+  \end{equation*}
+\end{proof}
+
+\begin{problem}[3m uzunluğundaki düzgün bir teli 30cm uzunluğundaki parçalara bölmek 144sn sürüyor. Buna göre aynı teli 25cm'lik parçalara bölmek kaç sn sürer?]
+\end{problem}
+
+\begin{proof}[\textit{ Sol. }]
+  \begin{equation*}
+    \begin{aligned}[t]
+      300 \div 30 = 10 \text{ parça, 9 kesim}\\
+      300 \div 25 = 12 \text{ parça, 11 kesim}
+    \end{aligned}
+    \qquad\qquad
+    \begin{aligned}[t]
+      \begin{cases}
+        9 \text{ kesim } &144\\
+        11 \text{ kesim } &x
+      \end{cases}
+      \begin{cases}
+        9x = 144 \times 11\\
+        x = 16 \times 11 = 176 \text{ sn}
+      \end{cases}
+    \end{aligned}
+  \end{equation*}
+\end{proof}
+
+\begin{problem}[310 TL'yi 3 kişi 2, 3 ile doğru 6 ile ters orantılı şekilde paylaşıyorlar. En az alan kaç TL alır?]
+\end{problem}
+
+\begin{proof}[\textit{ Sol. }]
+  \begin{equation*}
+    \begin{aligned}[t]
+      \frac{a}{2} = \frac{b}{3} = 6c = k
+    \end{aligned}
+    \qquad\qquad
+    \begin{aligned}[t]
+      a &= 2k\\
+      b &= 3k\\
+      c &= \frac{6}{k}
+    \end{aligned}
+    \qquad\qquad
+    \begin{aligned}[t]
+      \frac{2k + 3k + k}{6} &= 31k\\
+      \frac{31k}{6} &= 310\\
+      k &= 60
+    \end{aligned}
+  \end{equation*}
+\end{proof}
+
+\begin{problem}[6 işçinin 12 günde yaptığını 9 işçi kaç günde yapar?]
+\end{problem}
+
+\begin{proof}[\textit{ Sol. }]
+  \begin{equation*}
+    \begin{aligned}[t]
+      &6 => 12\\
+      &9 => x
+    \end{aligned}
+    \qquad\qquad
+    \begin{aligned}[t]
+      72 &= 9x\\
+      x &= 8
+    \end{aligned}
+  \end{equation*}
+\end{proof}
+
+\begin{problem}[30 kişilik gruba 48 gün yetecek yiyecek vardır. 8 gün sonra bu gruptan 6 kişi ayrılırsa kalan yiyecek kalan gruba kaç gün yeter?]
+\end{problem}
+
+\begin{proof}[\textit{ Sol. }]
+  \begin{equation*}
+    \begin{aligned}[t]
+      48 - 8 = 40 \text{ günlük}\\
+      30 => 40\\
+      24 => x
+    \end{aligned}
+    \qquad\qquad
+    \begin{aligned}[t]
+      30 \times 40 = 24x\\
+      x = 50
+    \end{aligned}
+  \end{equation*}
+\end{proof}
+
+\end{document}

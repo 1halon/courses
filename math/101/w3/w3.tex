@@ -1,0 +1,254 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Define Article %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Using Packages %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{empheq}
+\usepackage{mdframed}
+\usepackage{booktabs}
+\usepackage{lipsum}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{psfrag}
+\usepackage{pgfplots}
+\usepackage{bm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Other Settings
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% Page Setting %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\geometry{a4paper}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% Define some useful colors %%%%%%%%%%%%%%%%%%%%%%%%%%
+\definecolor{ocre}{RGB}{243,102,25}
+\definecolor{mygray}{RGB}{243,243,244}
+\definecolor{deepGreen}{RGB}{26,111,0}
+\definecolor{shallowGreen}{RGB}{235,255,255}
+\definecolor{deepBlue}{RGB}{61,124,222}
+\definecolor{shallowBlue}{RGB}{235,249,255}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% Define an orangebox command %%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand\orangebox[1]{\fcolorbox{ocre}{mygray}{\hspace{1em}#1\hspace{1em}}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% English Environments %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newtheoremstyle{mytheoremstyle}{3pt}{3pt}{\normalfont}{0cm}{\rmfamily\bfseries}{}{1em}{{\color{black}\thmname{#1}~\thmnumber{#2}}\thmnote{\,--\,#3}}
+\newtheoremstyle{myproblemstyle}{3pt}{3pt}{\normalfont}{0cm}{\rmfamily\bfseries}{}{1em}{{\color{black}\thmname{#1}~\thmnumber{#2}}\thmnote{\,--\,#3}}
+\theoremstyle{mytheoremstyle}
+\newmdtheoremenv[linewidth=1pt,backgroundcolor=shallowGreen,linecolor=deepGreen,leftmargin=0pt,innerleftmargin=20pt,innerrightmargin=20pt,]{theorem}{Theorem}[section]
+\theoremstyle{mytheoremstyle}
+\newmdtheoremenv[linewidth=1pt,backgroundcolor=shallowBlue,linecolor=deepBlue,leftmargin=0pt,innerleftmargin=20pt,innerrightmargin=20pt,]{definition}{Definition}[section]
+\theoremstyle{myproblemstyle}
+\newmdtheoremenv[linecolor=black,leftmargin=0pt,innerleftmargin=10pt,innerrightmargin=10pt,]{problem}{Problem}[section]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Plotting Settings %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepgfplotslibrary{colorbrewer}
+\pgfplotsset{width=8cm,compat=1.9}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Title & Author %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{Week III}
+\author{Halil Yiğit KOÇHAN}
+\date{December 5, 2023}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+    \maketitle
+
+\begin{gather*}
+  x < y => x + c < y + c\\
+  x < y =>
+  \begin{cases}
+    x \times c < y \times c\\
+    x \div c < y \div c
+  \end{cases}
+  \begin{cases}
+    \text{negatif sayıyla çarpma bölmede işaret yer değiştirir}
+  \end{cases}
+\end{gather*}
+
+$$ x > y > z => \frac{1}{x} < \frac{1}{y} < \frac{1}{z} $$
+
+$$ ... a^5 > a^4 > a^3 > a^2 > a => a > 1 $$
+
+$$ ... a^5 < a^4 < a^3 < a^2 < a => 0 < a < 1 $$
+
+$$ a < a^2 < |a| => -1 < a < 0 $$
+
+\begin{align*}
+  &a < b\\
+  &x < y\\
+  &= a + x < b + y
+\end{align*}
+
+\begin{problem}[$ -4 \le x < 5 $, $ -3 < y < 4 $ ise $ 3x - 2y $'nin en büyük ve en küçük tamsayı?]
+\end{problem}
+
+\begin{proof}[\textit{ Sol. }]
+  \begin{equation*}
+    \begin{aligned}[t]
+      -12 \le 3x < 15\\
+      -8 < -2y < 6\\
+      -20 < 3x -2y < 21\\
+    \end{aligned}
+    \qquad\qquad
+    \begin{aligned}[t]
+      &\text{En büyük: } 20\\
+      &\text{En küçük: } -19
+    \end{aligned}
+  \end{equation*}
+\end{proof}
+
+\begin{problem}[$ -3 < x < 5 $, $ -2 < y < 6 $, $ x $ ve $ y \in {Z} $ ise $ 3x - 2y $'nin max değeri?]
+\end{problem}
+
+\begin{proof}[\textit{ Sol. }]
+  \begin{equation*}
+    \begin{aligned}[t]
+      x = 4\\
+      y = -1\\
+    \end{aligned}
+    \qquad\qquad
+    \begin{aligned}[t]
+      3 \times 4 + -2 \times -1 = 14
+    \end{aligned}
+  \end{equation*}
+\end{proof}
+
+\begin{problem}[$ -6 \le x < 2 $, $ 3x + 2y = 24 $ ise $ y $'nin tanım aralığı?]
+\end{problem}
+
+\begin{proof}[\textit{ Sol. }]
+  \begin{equation*}
+    \begin{aligned}[t]
+      x &= -6\\
+      y &= 21\\
+      x &= 2\\
+      y &= 9\\
+      9 <&\ y \le 21
+    \end{aligned}
+    \qquad\qquad
+    \begin{aligned}[t]
+      -6 &< -3x \le 18\\
+      18 &< 24 - 3x \le 42\\
+      9 &< 24 - 3x \div 2 \le 21
+    \end{aligned}
+  \end{equation*}
+\end{proof}
+
+\begin{problem}[$ 2 < x \le 5 $ ise $ x^2 = ? $]
+\end{problem}
+
+\begin{proof}[\textit{ Sol. }]
+  $$ 4 < x^2 < 25 $$
+\end{proof}
+
+\begin{problem}[$ -4 < x < 3 $ ise $ x^2 = ? $]
+\end{problem}
+
+\begin{proof}[\textit{ Sol. }]
+  $$ 0 < x^2 < 16 $$
+\end{proof}
+
+
+\begin{problem}[$ -2 < x < 5 $ ise $ (x^2 - 2x)_{max} = ? $]
+\end{problem}
+
+\begin{proof}[\textit{ Sol. }]
+  \begin{equation*}
+    \begin{aligned}[t]
+      (x^2 - 2x + 1) - 1\\
+      (x - 1)^2 - 1
+    \end{aligned}
+    \qquad\qquad
+    \begin{aligned}[t]
+      -3 < (x - 1)^2 < 4\\
+      0 < (x^2 - 1)^2 < 16\\
+      -1 < (x^2)^2 - 1 < 15
+    \end{aligned}
+  \end{equation*}
+\end{proof}
+
+\begin{problem}[$ -5 < x < 2 $ ise $ x^3 $ tanım aralığı?]
+\end{problem}
+
+\begin{proof}[\textit{ Sol. }]
+  \begin{align*}
+    -125 < x < 8\\
+    -2 < x \le 6
+  \end{align*}
+\end{proof}
+
+\begin{problem}[$ -4 \le y < 3 $ ise $ x \times y $ aralığı?]
+\end{problem}
+
+\begin{proof}[\textit{ Sol. }]
+  \begin{align*}
+    -24 \le x \times y < 18
+    \quad
+    \begin{cases}
+      -24,\\
+      -12,\\
+      -6,\\
+      8,\\
+      18
+    \end{cases}
+  \end{align*}
+\end{proof}
+
+\begin{problem}[$ x, y, z \in {R}, x \le y < z, x \times y - y \times z < 4x - 4z $ ise $ y $ tanım aralığı?]
+\end{problem}
+
+\begin{proof}[\textit{ Sol. }]
+  \begin{align*}
+    &(x - z) \times y (x - z) \times 4\\
+    &y > 4
+  \end{align*}
+\end{proof}
+
+\begin{problem}[$ a \ times b < b \times c < a \times c $ $ (1 \div a \ times b \times c) $, $ a, b, c \in {R+} $ ise $ a, b, c $ sıralayınız.]
+\end{problem}
+
+\begin{proof}[\textit{ Sol. }]
+  \begin{gather*}
+    \frac{1}{c} > \frac{1}{b} > \frac{1}{a}\\
+    c > b > a\\
+    a^2 < a
+  \end{gather*}
+\end{proof}
+
+\begin{problem}[$ a^2 < a $, $ b < b^3 < b^2 $ ise $ a + b $ tanım aralığı?]
+\end{problem}
+
+\begin{proof}[\textit{ Sol. }]
+  \begin{align*}
+    0 < a < 1\\
+    -1 < b < 0\\
+    -1 < a + b < 1
+  \end{align*}
+\end{proof}
+
+\pagebreak
+\begin{problem}[A'dan B'ye gitmek için 2 yol var;\\]
+  I. yol = $ 410 - 2x $ km\\
+  II. yol = $ 3x + 10 $ km\\
+  1. yol, II. yoldan daha kısa ise $ x $ tanım aralığı?
+\end{problem}
+
+\begin{proof}[\textit{ Sol. }]
+  \begin{align*}
+    410 - 2x < 3x + 10\\
+    400 < 5x\\
+    80 < x
+    410 - 2x > 0
+  \end{align*}
+\end{proof}
+
+\end{document}

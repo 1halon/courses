@@ -1,0 +1,269 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Define Article %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Using Packages %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{empheq}
+\usepackage{mdframed}
+\usepackage{booktabs}
+\usepackage{lipsum}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{psfrag}
+\usepackage{pgfplots}
+\usepackage{bm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Other Settings
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% Page Setting %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\geometry{a4paper}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% Define some useful colors %%%%%%%%%%%%%%%%%%%%%%%%%%
+\definecolor{ocre}{RGB}{243,102,25}
+\definecolor{mygray}{RGB}{243,243,244}
+\definecolor{deepGreen}{RGB}{26,111,0}
+\definecolor{shallowGreen}{RGB}{235,255,255}
+\definecolor{deepBlue}{RGB}{61,124,222}
+\definecolor{shallowBlue}{RGB}{235,249,255}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% Define an orangebox command %%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand\orangebox[1]{\fcolorbox{ocre}{mygray}{\hspace{1em}#1\hspace{1em}}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% English Environments %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newtheoremstyle{mytheoremstyle}{3pt}{3pt}{\normalfont}{0cm}{\rmfamily\bfseries}{}{1em}{{\color{black}\thmname{#1}~\thmnumber{#2}}\thmnote{\,--\,#3}}
+\newtheoremstyle{myproblemstyle}{3pt}{3pt}{\normalfont}{0cm}{\rmfamily\bfseries}{}{1em}{{\color{black}\thmname{#1}~\thmnumber{#2}}\thmnote{\,--\,#3}}
+\theoremstyle{mytheoremstyle}
+\newmdtheoremenv[linewidth=1pt,backgroundcolor=shallowGreen,linecolor=deepGreen,leftmargin=0pt,innerleftmargin=20pt,innerrightmargin=20pt,]{theorem}{Theorem}[section]
+\theoremstyle{mytheoremstyle}
+\newmdtheoremenv[linewidth=1pt,backgroundcolor=shallowBlue,linecolor=deepBlue,leftmargin=0pt,innerleftmargin=20pt,innerrightmargin=20pt,]{definition}{Definition}[section]
+\theoremstyle{myproblemstyle}
+\newmdtheoremenv[linecolor=black,leftmargin=0pt,innerleftmargin=10pt,innerrightmargin=10pt,]{problem}{Problem}[section]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Plotting Settings %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepgfplotslibrary{colorbrewer}
+\pgfplotsset{width=8cm,compat=1.9}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Title & Author %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{Absolute Value}
+\author{Halil Yiğit KOÇHAN}
+\date{December 19, 2023}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+    \maketitle
+
+\begin{gather*}
+  |x| =
+  \begin{cases}
+    x < 0, &-x\\
+    x > 0, &x
+  \end{cases}\\
+  \left|\frac{-1}{2}\right| = \frac{1}{2}\\
+  |-x| = |x|\\
+  |x - y| = |y - x|\\
+  |x \times y| = |x| \times |y|\\
+  |\frac{x}{y}| = \frac{|x|}{|y|}\\
+  a > 0, |f(x)| = a \text{ ise } f(x) = a, f(x) = -a\\
+  a > 0, |f(x)| \le a \text{ ise } -a \le f(x) \le a\\
+  a > 0, |f(x)| \ge 0 \text { ise } f(x) \ge a, f(x) \le -a\\
+  |x + y| \le |x| + |y|
+\end{gather*}
+
+\begin{problem}[$ x > 0 $ ve $ y < 0 $ ise $ |x - y| + |x| + |y| = ? $]
+\end{problem}
+
+\begin{proof}[\textit{ Sol. }]
+  $$ x - y + x - y = 2x -2y = 2(x - y) $$
+\end{proof}
+
+\begin{problem}[$ x < 0 < y $ ise $ \frac{x^2 + 2|xy| + y^2}{|y - x|} = ? $]
+\end{problem}
+
+\begin{proof}[\textit{ Sol. }]
+  $$ \frac{x^2 + y^2 - 2xy}{y - x} = \frac{(x - y)^2}{y - x} = y - x $$
+\end{proof}
+
+\pagebreak
+\begin{problem}[$ a, b \in {R} $, $ a - b = 2 $, $ a - |b - a| = 4 $ ise $ a + b = ? $]
+\end{problem}
+
+\begin{proof}[\textit{ Sol. }]
+  \begin{equation*}
+    \begin{aligned}[t]
+      |a - b| = 2\\
+      |b - a| = |a - b| = 2
+    \end{aligned}
+    \qquad\qquad
+    \begin{aligned}[t]
+      a - 2 = 4\\
+      a = 6\\
+      6 + 4 = 10
+    \end{aligned}
+  \end{equation*}
+\end{proof}
+
+\begin{problem}[$ x < 0 < y $ olmak üzere $ \sqrt{9x^2} - {\sqrt[3]{y^3}} + \sqrt{(x - y)^2} $]
+\end{problem}
+
+\begin{proof}[\textit{ Sol. }]
+  $$ |3x| - y + |x - y| = -3x - y - x + y = -4x $$
+\end{proof}
+
+\begin{problem}[$ |x - 3| = 1905! $ ise $ x $ değerleri toplamı?]
+\end{problem}
+
+\begin{proof}[\textit{ Sol. }]
+  \begin{equation*}
+    \begin{aligned}[t]
+      x - 3 = 1905!,\quad x = 1905! + 3
+    \end{aligned}
+    \qquad\qquad
+    \begin{aligned}[t]
+      x - 3 = -1905!,\quad x = 1905 + 3
+    \end{aligned}
+  \end{equation*}
+  $$ x = 1905 + 3 -1905! + 3 = 6 $$
+\end{proof}
+
+\begin{problem}[$ |x^2 - 16| = |x - 4| $ denklemeni sağlayan $ x $ değerleri toplamı?]
+\end{problem}
+
+\begin{proof}[\textit{ Sol. }]
+  $$ |x - 4| \times |x + 4| = |x - 4| $$
+  \begin{equation*}
+    \begin{aligned}[t]
+      |x + 4| = 1\\
+      x + 4 = 1\\
+      x = -3
+    \end{aligned}
+    \qquad\qquad
+    \begin{aligned}[t]
+      |x + 4| = -1\\
+      x + 4 = -1\\
+      x = -5
+    \end{aligned}
+  \end{equation*}
+\end{proof}
+
+\begin{problem}[$ |x - 1| \le 2 $, $ x + y - 3 = 0 $, $ y $'nin en büyük değeri?]
+\end{problem}
+
+\begin{proof}[\textit{ Sol. }]
+  \begin{equation*}
+    \begin{aligned}[t]
+      -2 \le x - 1 \le 2\\
+      -1 \le x \le 3
+    \end{aligned}
+    \qquad\qquad
+    \begin{aligned}[t]
+      x + y = 3\\
+      x = -1\\
+      y = 4
+    \end{aligned}
+  \end{equation*}
+\end{proof}
+
+\begin{problem}[$ |\frac{2}{x - 3} \le \frac{1}{2} $ eşitliğine sağlayan $ x $ değerleri toplamı?]
+\end{problem}
+
+\begin{proof}[\textit{ Sol. }]
+  $$ |x - \frac{3}{2} \le 2 $$
+  \begin{equation*}
+    \begin{aligned}[t]
+      -2 \le x \frac{3}{2} \le 2\\
+      -4 \le x - 3 \le 4
+    \end{aligned}
+    \qquad\qquad
+    \begin{aligned}[t]
+      -1 \le x \le 7\\
+      [-1, 7] - \{3\} = 24
+    \end{aligned}
+  \end{equation*}
+\end{proof}
+
+\begin{problem}[$ \frac{|x + 1| - 4}{|x| + 2} \le 0 $ eşitliğini sağlayan $ x $ tamsayı değerlerinin toplamı?]
+\end{problem}
+
+\begin{proof}[\textit{ Sol. }]
+  \begin{equation*}
+    \begin{aligned}[t]
+      |x + 1| - 4 \le 0\\
+      |x + 1| \le 4
+    \end{aligned}
+    \qquad\qquad
+    \begin{aligned}[t]
+      -4 \le x + 1 \le 4\\
+      -5 \le x \le 3
+    \end{aligned}
+  \end{equation*}
+  $$ \sum_{}^{}x = 9 $$
+\end{proof}
+
+\begin{problem}[$ \sqrt{x^2 + 6x + 9} > 2 $ eşitliğini $ x $ tamsayı değerleri toplamı? (sağlamayan = $ \le 2 $)]
+\end{problem}
+
+\begin{proof}[\textit{ Sol. }]
+  \begin{equation*}
+    \begin{aligned}[t]
+      \sqrt{(x - 3)^2}\\
+      |x - 3| \le 2
+    \end{aligned}
+    \qquad\qquad
+    \begin{aligned}[t]
+      -2 \le x - 3 \le 2\\
+      1 \le x \le 5
+    \end{aligned}
+  \end{equation*}
+  $$ \sum_{}^{}x = 15 $$
+\end{proof}
+
+\begin{problem}[$ |x + 4| < |x + 6| $, $ Ç.K = ? $]
+\end{problem}
+
+\begin{proof}[\textit{ Sol. }]
+  \begin{equation*}
+    \begin{aligned}[t]
+      (x + 4)^2 < (x + 6)^2\\
+      x^2 + 8x + 16 < x^2 + 12x + 36
+    \end{aligned}
+    \qquad\qquad
+    \begin{aligned}[t]
+      -4x < 20\\
+      x > -5
+    \end{aligned}
+  \end{equation*}
+  $$ Ç.K = (-5, \infty) $$
+\end{proof}
+
+\begin{problem}[$ 7 \le |2x - 1| \le 13 $ eşitsizliğini sağlayan kaç $ x $ değeri vardır?]
+\end{problem}
+
+\begin{proof}[\textit{ Sol. }]
+  \begin{equation*}
+    \begin{aligned}[t]
+      7 \le 2x - 1 \le 13\\
+      8 \le 2x \le 14\\
+      4 \le x \le 7
+    \end{aligned}
+    \qquad\qquad
+    \begin{aligned}[t]
+      7 \le -2 + 1 \le 13\\
+      6 \le -2 \le 12\\
+      -12 \le 2x \le -6\\
+      -6 \le x \le -3
+    \end{aligned}
+  \end{equation*}
+  $$ \sum_{}^{}x = 8 $$
+\end{proof}
+
+\end{document}

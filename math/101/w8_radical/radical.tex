@@ -1,0 +1,225 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Define Article %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Using Packages %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{empheq}
+\usepackage{mdframed}
+\usepackage{booktabs}
+\usepackage{lipsum}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{psfrag}
+\usepackage{pgfplots}
+\usepackage{bm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Other Settings
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% Page Setting %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\geometry{a4paper}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% Define some useful colors %%%%%%%%%%%%%%%%%%%%%%%%%%
+\definecolor{ocre}{RGB}{243,102,25}
+\definecolor{mygray}{RGB}{243,243,244}
+\definecolor{deepGreen}{RGB}{26,111,0}
+\definecolor{shallowGreen}{RGB}{235,255,255}
+\definecolor{deepBlue}{RGB}{61,124,222}
+\definecolor{shallowBlue}{RGB}{235,249,255}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% Define an orangebox command %%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand\orangebox[1]{\fcolorbox{ocre}{mygray}{\hspace{1em}#1\hspace{1em}}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% English Environments %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newtheoremstyle{mytheoremstyle}{3pt}{3pt}{\normalfont}{0cm}{\rmfamily\bfseries}{}{1em}{{\color{black}\thmname{#1}~\thmnumber{#2}}\thmnote{\,--\,#3}}
+\newtheoremstyle{myproblemstyle}{3pt}{3pt}{\normalfont}{0cm}{\rmfamily\bfseries}{}{1em}{{\color{black}\thmname{#1}~\thmnumber{#2}}\thmnote{\,--\,#3}}
+\theoremstyle{mytheoremstyle}
+\newmdtheoremenv[linewidth=1pt,backgroundcolor=shallowGreen,linecolor=deepGreen,leftmargin=0pt,innerleftmargin=20pt,innerrightmargin=20pt,]{theorem}{Theorem}[section]
+\theoremstyle{mytheoremstyle}
+\newmdtheoremenv[linewidth=1pt,backgroundcolor=shallowBlue,linecolor=deepBlue,leftmargin=0pt,innerleftmargin=20pt,innerrightmargin=20pt,]{definition}{Definition}[section]
+\theoremstyle{myproblemstyle}
+\newmdtheoremenv[linecolor=black,leftmargin=0pt,innerleftmargin=10pt,innerrightmargin=10pt,]{problem}{Problem}[section]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Plotting Settings %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepgfplotslibrary{colorbrewer}
+\pgfplotsset{width=8cm,compat=1.9}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Title & Author %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{Radical Numbers}
+\author{Halil Yiğit KOÇHAN}
+\date{December 19, 2023}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+    \maketitle
+
+\section{Köklü Sayılar}
+
+\begin{gather*}
+  \sqrt[n]{a^m} = \frac{a^m}{n}\\
+  \sqrt{a^2} = a\\
+  \sqrt[3]{a^3} = a\\
+  \sqrt[m]{\sqrt[n]{\sqrt[x]{\sqrt[a]{a}}}} = \sqrt[mnx]{a}\\
+  \sqrt[n]{x} \times \sqrt[n]{y} = \sqrt[n]{x \times y}\\
+  \sqrt{a + b + 2\sqrt{a \times b}} = \sqrt{a} + \sqrt{b}\\
+  \sqrt{a + b - 2\sqrt{a \times b}} = \sqrt{a} - \sqrt{b}\\
+  \frac{\sqrt[n]{x}}{\sqrt[n]{y}} = \sqrt[n]{\frac{x}{y}}
+\end{gather*}
+
+\begin{problem}[$ \sqrt{5 + 2\sqrt{6}} = ? $]
+\end{problem}
+
+\begin{proof}[\textit{ Sol. }]
+  $$ \sqrt{3} + \sqrt{2} $$
+\end{proof}
+
+\subsection{Eşlenik}
+
+\begin{gather*}
+  \sqrt{x} -> \sqrt{x}\\
+  \sqrt{x + y} = \sqrt{x + y}
+  \sqrt{x} + \sqrt{y} = \sqrt{x} - \sqrt{y}
+\end{gather*}
+
+\begin{problem}[$ \sqrt{10 - \sqrt{31 + \sqrt{21} + \sqrt{19} - \sqrt{9}}} = ? $]
+\end{problem}
+
+\begin{proof}[\textit{ Sol. }]
+  $$ \sqrt{10 - 6} = \sqrt{4} = 2 $$
+\end{proof}
+
+\begin{problem}[$ \sqrt{18} + \sqrt{50} + \sqrt{72} + \sqrt{8} = ? $]
+\end{problem}
+
+\begin{proof}[\textit{ Sol. }]
+  $$ 3\sqrt{2} + 5\sqrt{2} + 6\sqrt{2} - 2\sqrt{2} = 12\sqrt{2} = \sqrt{288} $$
+\end{proof}
+
+\begin{problem}[$ \sqrt{2 + \sqrt{a}} = 3 $, $ \sqrt{30 + \sqrt{27 + \sqrt{b}}} = 6 $ ise $ b - a = ? $]
+\end{problem}
+
+\begin{proof}[\textit{ Sol. }]
+  \begin{equation*}
+    \begin{aligned}[t]
+      2 + \sqrt{a} = 9\\
+      \sqrt{a}^2 = 7^2\\
+      a = 49
+    \end{aligned}
+    \qquad\qquad
+    \begin{aligned}[t]
+      30 + \sqrt{27 + \sqrt{b}} = 36\\
+      (27 + \sqrt{b})^2 = 6^2\\
+      \sqrt{b^2} = 9^2\\
+      b = 81
+    \end{aligned}
+  \end{equation*}
+  $$ b - a = 81 - 49 = 32 $$
+\end{proof}
+
+\begin{problem}[$ \frac{\sqrt{0,49} - \sqrt{64} + \sqrt{1,69}}{\sqrt{5} - \sqrt{2}} = ? $]
+\end{problem}
+
+\begin{proof}[\textit{ Sol. }]
+  \begin{equation*}
+    \begin{aligned}[t]
+      \frac{0,7 - 8 + 13}{\sqrt{5} - \sqrt{2}} = &\frac{-6}{\sqrt{5} - \sqrt{2}}\\
+      &(\sqrt{5} - \sqrt{2})
+    \end{aligned}
+    \qquad\qquad
+    \begin{aligned}[t]
+      \frac{-6\sqrt{5} - 6\sqrt{2}}{3} = -2\sqrt{5} - 2\sqrt{3}
+    \end{aligned}
+  \end{equation*}
+\end{proof}
+
+\begin{problem}[$ \frac{3 + \sqrt{3}}{3 - \sqrt{3}} + \frac{3 - \sqrt{3}}{3 + \sqrt{3}} = ? $]
+\end{problem}
+
+\begin{proof}[\textit{ Sol. }]
+  $$ \frac{9 + 3\sqrt{3} + 3\sqrt{3} + 9 - 3\sqrt{3} - 3\sqrt{3} + 3}{6} = \frac{24}{6} = 4 $$
+\end{proof}
+
+\begin{problem}[$ \sqrt{42 + \sqrt{42 + \sqrt{42} + ...}} = ? $ (x) $ (x = \sqrt{42 + \sqrt{42 + ...}})$]
+\end{problem}
+
+\begin{proof}[\textit{ Sol. }]
+  \begin{equation*}
+    \begin{aligned}[t]
+      \sqrt{42 + x^2} = x^2\\
+      42 + x = x^2\\
+      42 = x^2 - x
+    \end{aligned}
+    \qquad\qquad
+    \begin{aligned}[t]
+      42 = &x(x - 1)\\
+      &7\;\;6
+    \end{aligned}
+  \end{equation*}
+  $$ x = 7 $$
+\end{proof}
+
+\begin{problem}[$ \frac{3}{\sqrt{3} - 1} - \frac{1}{\sqrt{4 + 2\sqrt{3}}} = ? $]
+\end{problem}
+
+\begin{proof}[\textit{ Sol. }]
+  \begin{equation*}
+    \begin{aligned}[t]
+      \frac{3}{\sqrt{3} - 1} - \frac{1}{\sqrt{3} + 1}\\
+      \frac{3\sqrt{3} + 3 - \sqrt{3} + 1}{2}
+    \end{aligned}
+    \qquad\qquad
+    \begin{aligned}[t]
+      \frac{2\sqrt{3} + 4}{2} = \sqrt{3} + 2
+    \end{aligned}
+  \end{equation*}
+\end{proof}
+
+\begin{problem}[$ x, y \in {R+} $, $ \frac{x\sqrt{y} + y\sqrt{x}}{\sqrt{x} + \sqrt{y}} = 5 $; $ x \times y = ? $]
+\end{problem}
+
+\begin{proof}[\textit{ Sol. }]
+  \begin{equation*}
+    \begin{aligned}[t]
+      \frac{x\sqrt{x \times y} + y \times x - x \times y - y \sqrt{x \times y}}{x - y} = 5\\
+      5x - 5y = x \sqrt{x \times y - y \sqrt{x \times y}}
+    \end{aligned}
+    \qquad\qquad
+    \begin{aligned}[t]
+      5(x - y) = \sqrt{x \times y(x - y)}\\
+      \sqrt{x \times y}^2 = 5^2\\
+      x \times y = 25
+    \end{aligned}
+  \end{equation*}
+\end{proof}
+
+\begin{problem}[$ x, y \in {R} $, $ y = \sqrt{x - 5} + \sqrt{2 - x} $ ise $ x $ hangi aralıkta değer alır?]
+\end{problem}
+
+\begin{proof}[\textit{ Sol. }]
+  \begin{equation*}
+    \begin{aligned}[t]
+      x -5 \ge 0,\quad x >= 5\\
+      2 -x \ge 0,\quad 2 >= x\\
+      (-\infty, 2] \cup [5, \infty)\\
+      \sqrt{5}, \sqrt{7}, \sqrt{3}, \sqrt{3} < \sqrt{5} < \sqrt{7}\\
+    \end{aligned}
+    \qquad\qquad
+    \begin{aligned}[t]
+      a = \sqrt[3]{2} = \sqrt[12]{16}\\
+      b = \sqrt[4]{3} = \sqrt[12]{27}\\
+      c = \sqrt[6]{7} = \sqrt[12]{49}\\
+      c > b > a
+    \end{aligned}
+  \end{equation*}
+\end{proof}
+
+\end{document}

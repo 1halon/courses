@@ -1,0 +1,143 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Define Article %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Using Packages %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{empheq}
+\usepackage[makeroom]{cancel}
+\usepackage{mdframed}
+\usepackage{booktabs}
+\usepackage{lipsum}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{psfrag}
+\usepackage{pgfplots}
+\usepackage{bm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Other Settings
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% Page Setting %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\geometry{a4paper}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% Define some useful colors %%%%%%%%%%%%%%%%%%%%%%%%%%
+\definecolor{ocre}{RGB}{243,102,25}
+\definecolor{mygray}{RGB}{243,243,244}
+\definecolor{deepGreen}{RGB}{26,111,0}
+\definecolor{shallowGreen}{RGB}{235,255,255}
+\definecolor{deepBlue}{RGB}{61,124,222}
+\definecolor{shallowBlue}{RGB}{235,249,255}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% Define an orangebox command %%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand\orangebox[1]{\fcolorbox{ocre}{mygray}{\hspace{1em}#1\hspace{1em}}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% English Environments %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newtheoremstyle{mytheoremstyle}{3pt}{3pt}{\normalfont}{0cm}{\rmfamily\bfseries}{}{1em}{{\color{black}\thmname{#1}~\thmnumber{#2}}\thmnote{\,--\,#3}}
+\newtheoremstyle{myproblemstyle}{3pt}{3pt}{\normalfont}{0cm}{\rmfamily\bfseries}{}{1em}{{\color{black}\thmname{#1}~\thmnumber{#2}}\thmnote{\,--\,#3}}
+\theoremstyle{mytheoremstyle}
+\newmdtheoremenv[linewidth=1pt,backgroundcolor=shallowGreen,linecolor=deepGreen,leftmargin=0pt,innerleftmargin=20pt,innerrightmargin=20pt,]{theorem}{Theorem}[section]
+\theoremstyle{mytheoremstyle}
+\newmdtheoremenv[linewidth=1pt,backgroundcolor=shallowBlue,linecolor=deepBlue,leftmargin=0pt,innerleftmargin=20pt,innerrightmargin=20pt,]{definition}{Definition}[section]
+\theoremstyle{myproblemstyle}
+\newmdtheoremenv[linecolor=black,leftmargin=0pt,innerleftmargin=10pt,innerrightmargin=10pt,]{problem}{Problem}[section]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Plotting Settings %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepgfplotslibrary{colorbrewer}
+\pgfplotsset{width=8cm,compat=1.9}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Title & Author %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{Taban Aritmatiği}
+\author{Halil Y. KOÇHAN}
+\date{November 22, 2023}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+    \maketitle
+
+\section{$ abcd_x $} % (fold)
+\subsection{$ x > 1 $}
+\subsection{}
+\begin{itemize}
+  \item $ a < x $
+  \item $ b < x $
+  \item $ c < x $
+  \item $ d < x $
+\end{itemize}
+\subsection{$ a, b, c, d, x \in {Z} $}
+
+\begin{problem}[$ 32_a $, $ 4a1_6 $ ise $a$ alacağı değerler?]
+\end{problem}
+
+\textit{ Sol. }
+$ \cancel{1}, \cancel{2}, 3, 4, 5 $
+
+\section{$ abc_x $}
+\subsection{x çift ise}
+Birler basamağının (c) durumu
+\subsection{x tek ise}
+$ a + b + c = d $, d'nin durumu
+
+\section{Problems}
+\begin{problem}[$ 1342_6 = ?_{10} $]
+\end{problem}
+
+\begin{proof}[\textit{ Sol. }]
+  \begin{gather*}
+    1342_6 = 1 \times 6^3 + 3 \times 6^2 + 4 \times 6^1 + 2 \times 6^0\\
+    = 216 + 108 + 24 + 2 = 330_{10}
+  \end{gather*}
+\end{proof}
+
+\begin{problem}[$ 1433_7 = ?_5 $]
+\end{problem}
+
+\begin{proof}[\textit{ Sol. }]
+  \begin{gather*}
+    3 \times 7^0 + 3 \times 7^1 + 4 \times 7^2 + 3 \times 7^3 = 563\\
+    563 \div 5 = 112 \pmod 3\\
+    112 \div 5 = 22 \pmod 2\\
+    22 \div 5 = 4 \pmod 2\\
+    = 4223_5
+  \end{gather*}
+\end{proof}
+
+\begin{problem}[$ 243_5 + 124_5 = ? $]
+\end{problem}
+
+\begin{proof}[\textit{ Sol. }]
+  \begin{gather*}
+    243 + 124 = 422\\
+    3 + 4 = 7 / 5 = 1 \pmod 2
+  \end{gather*}
+\end{proof}
+
+\begin{problem}[4 tabanındaki en büyük 3 basamaklı sayının 5 tabanındaki eşitir kaçtır?]
+\end{problem}
+
+\begin{proof}[\textit{ Sol. }]
+$ 333_4 = ?_5 $
+  \begin{gather*}
+    3 \times + 4^0 + 3 \times 4^1 + 3 \times 4^2 = 3 + 12 + 48 = 63\\\\
+    63 \div 5 = 12 \pmod 3\\
+    12 \div 5 = 2 \pmod 2\\
+    = 223_5
+  \end{gather*}
+\end{proof}
+
+\begin{problem}[$ 3^9 $ sayısı 3 tabanında kaç basamaklıdır?]
+\end{problem}
+
+\begin{proof}[\textit{ Sol. }]
+  1 ... 000 (9 tane 0), $3_9$, 10 basamak
+\end{proof}
+
+\end{document}

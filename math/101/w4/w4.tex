@@ -1,0 +1,246 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Define Article %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Using Packages %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{empheq}
+\usepackage[makeroom]{cancel}
+\usepackage{mdframed}
+\usepackage{booktabs}
+\usepackage{lipsum}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{psfrag}
+\usepackage{pgfplots}
+\usepackage{bm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Other Settings
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% Page Setting %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\geometry{a4paper}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% Define some useful colors %%%%%%%%%%%%%%%%%%%%%%%%%%
+\definecolor{ocre}{RGB}{243,102,25}
+\definecolor{mygray}{RGB}{243,243,244}
+\definecolor{deepGreen}{RGB}{26,111,0}
+\definecolor{shallowGreen}{RGB}{235,255,255}
+\definecolor{deepBlue}{RGB}{61,124,222}
+\definecolor{shallowBlue}{RGB}{235,249,255}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% Define an orangebox command %%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand\orangebox[1]{\fcolorbox{ocre}{mygray}{\hspace{1em}#1\hspace{1em}}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% English Environments %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newtheoremstyle{mytheoremstyle}{3pt}{3pt}{\normalfont}{0cm}{\rmfamily\bfseries}{}{1em}{{\color{black}\thmname{#1}~\thmnumber{#2}}\thmnote{\,--\,#3}}
+\newtheoremstyle{myproblemstyle}{3pt}{3pt}{\normalfont}{0cm}{\rmfamily\bfseries}{}{1em}{{\color{black}\thmname{#1}~\thmnumber{#2}}\thmnote{\,--\,#3}}
+\theoremstyle{mytheoremstyle}
+\newmdtheoremenv[linewidth=1pt,backgroundcolor=shallowGreen,linecolor=deepGreen,leftmargin=0pt,innerleftmargin=20pt,innerrightmargin=20pt,]{theorem}{Theorem}[section]
+\theoremstyle{mytheoremstyle}
+\newmdtheoremenv[linewidth=1pt,backgroundcolor=shallowBlue,linecolor=deepBlue,leftmargin=0pt,innerleftmargin=20pt,innerrightmargin=20pt,]{definition}{Definition}[section]
+\theoremstyle{myproblemstyle}
+\newmdtheoremenv[linecolor=black,leftmargin=0pt,innerleftmargin=10pt,innerrightmargin=10pt,]{problem}{Problem}[section]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Plotting Settings %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepgfplotslibrary{colorbrewer}
+\pgfplotsset{width=8cm,compat=1.9}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Title & Author %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{Week IV}
+\author{Halil Yiğit KOÇHAN}
+\date{December 5, 2023}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+    \maketitle
+
+\begin{align*}
+  \frac{a}{b}, \frac{uzunluk}{uzunluk}, \frac{kilo}{kilo}, \xcancel{\frac{\text{ağırlık}}{uzunluk}}
+\end{align*}
+
+$$ \frac{a}{b} = \frac{c}{d} = \frac{e}{f} = k \text{ (orantı sabiti)} => \text{orantı} $$
+
+$$ \cancel{\bcancel{\frac{a}{b} = \frac{c}{d}}} => (a \times d) \times (b \times c) $$
+
+\begin{equation*}
+  \begin{aligned}[t]
+    \frac{b}{a} = \frac{d}{c}
+  \end{aligned}
+  \qquad\qquad
+  \begin{aligned}[t]
+    a : b : c = x : y : z\\
+    \frac{a}{x} = \frac{b}{y} = \frac{c}{z}
+  \end{aligned}
+\end{equation*}
+
+\begin{equation*}
+  \begin{aligned}[t]
+    \frac{a}{d} = \frac{c}{d} = \frac{e}{f} = k
+  \end{aligned}
+  \qquad\qquad
+  \begin{aligned}[t]
+    &\frac{a}{d} = \frac{c}{d} = \frac{e}{f} = 3k\\
+    &(k)\;\ (k)\;\ (k)\;\
+  \end{aligned}
+  \qquad\qquad
+  \begin{aligned}[t]
+    &\frac{a}{d} = \frac{c}{d} = \frac{e}{f} = k^3\\
+    &(k)\;\ (k)\;\ (k)\;\
+  \end{aligned}
+\end{equation*}
+
+$$ \frac{a}{b} = k => a = b \times k $$
+
+\begin{problem}[$ \frac{a + 3b + 2c}{2a - b + c} = 2 $ ise $ \frac{2a + 3b}{2b - a} = ? $]
+\end{problem}
+
+\begin{proof}[\textit{ Sol. }]
+  \begin{equation*}
+    \begin{aligned}[t]
+      &a + 3b + 2c = 4a - 2b + 2c\\
+      &5b = 3a, a = 5k, b = 3k
+    \end{aligned}
+    \qquad\qquad
+    \begin{aligned}[t]
+      \frac{10k + 9k}{6k - 5k} = \frac{19k}{k} = 19
+    \end{aligned}
+  \end{equation*}
+\end{proof}
+
+\begin{problem}[$ \frac{a}{b} = \frac{2}{3} $, $ \frac{b}{c} = \frac{4}{5} $, $ a + b + c = 105 $ ise $ a = ? $]
+\end{problem}
+
+\begin{proof}[\textit{ Sol. }]
+  \begin{equation*}
+    \begin{aligned}[t]
+      &\frac{a}{b} = \frac{2}{3}, \frac{b}{c} = \frac{4}{5}\\
+      &(4)\qquad\qquad\!(3)
+    \end{aligned}
+    \qquad\qquad
+    \begin{aligned}[t]
+      &\frac{a}{b} = \frac{8}{12}, \frac{b}{c} = \frac{12}{15}\\
+    \end{aligned}
+  \end{equation*}
+  \begin{align*}
+    b = 12, c = 15, a = 8
+  \end{align*}
+\end{proof}
+
+\begin{problem}[$ \frac{x}{2} = \frac{y}{3} = \frac{z}{5} $ ve $ x - 2y + 3z = 33 $ ise $ x + y + z = ? $]
+\end{problem}
+
+\begin{proof}[\textit{ Sol. }]
+  \begin{equation*}
+    \begin{aligned}[t]
+      x = 2k\\
+      y = 3k\\
+      z = 5k\\
+    \end{aligned}
+    \qquad\qquad
+    \begin{aligned}[t]
+      2k - 6k + 15k &= 33\\
+      11k &= 33\\
+      k &= 3
+    \end{aligned}
+  \end{equation*}
+  \begin{align*}
+    6 + 9 + 15 = 30
+  \end{align*}
+\end{proof}
+
+\begin{problem}[$ \frac{x}{y} = \frac{y}{z} = \frac{z}{t} $, $ \frac{x}{t} = 8 $ ise $ \frac{x}{z} = ? $]
+\end{problem}
+
+\begin{proof}[\textit{ Sol. }]
+  \begin{equation*}
+    \begin{aligned}[t]
+      &\frac{x}{y} \times \frac{y}{z} \times \frac{z}{t} = k^3\\
+      &(k)\;\ (k)\;\ (k)
+    \end{aligned}
+    \qquad\qquad
+    \begin{aligned}[t]
+      \frac{x}{t} = k^3 = 8\\
+      k = 2
+    \end{aligned}
+    \qquad\qquad
+    \begin{aligned}[t]
+      &\frac{x}{y} \times \frac{y}{z} = k^2 = 4\\
+      &(k)\;\ (k)
+    \end{aligned}
+  \end{equation*}
+  \begin{align*}
+    \frac{a}{b} = \frac{c}{d} = \frac{e}{f} = 2
+  \end{align*}
+\end{proof}
+
+\begin{problem}[$ \frac{a + 2b}{b} - \frac{c - 2d}{d} - \frac{4e - f}{e} = ? $]
+\end{problem}
+
+\begin{proof}[\textit{ Sol. }]
+  \begin{equation*}
+    \begin{aligned}[t]
+      a = 2b\\
+      c = 2d\\
+      e = 2f\\
+    \end{aligned}
+    \qquad\qquad
+    \begin{aligned}[t]
+      &\frac{4b}{b} - \frac{2d - 2d}{d} - \frac{8f - f}{2f}\\
+      &\qquad\qquad\!\!\!(0)\qquad\! (7f \div 2f)
+    \end{aligned}
+  \end{equation*}
+  \begin{align*}
+    (4 - 7) \div 2 = 1 \div 2
+  \end{align*}
+\end{proof}
+
+\begin{problem}[$ \frac{z}{y} = \frac{z}{t} = \frac{m}{n} = \frac{3}{5} $, $ 2x - z + 3m = 18 $, $ 2y + 3n = 34 $, $ t = ? $]
+\end{problem}
+
+\begin{proof}[\textit{ Sol. }]
+  \begin{equation*}
+    \begin{aligned}[t]
+      \frac{2x - z + 3m}{2y - t + 3n} = \frac{3}{5}\\
+      \frac{18}{34 - t} = \frac{3}{5}
+    \end{aligned}
+    \qquad\qquad
+    \begin{aligned}[t]
+      90 &= 102 - 3t\\
+      3t &= 12\\
+      t &= 4
+    \end{aligned}
+  \end{equation*}
+\end{proof}
+
+\begin{problem}[$ \frac{a}{2} = \frac{b}{3} = \frac{c}{4} = \frac{-2a + 5b - xc}{3} $ işleminde $ x = ? $]
+\end{problem}
+
+\begin{proof}[\textit{ Sol. }]
+  \begin{equation*}
+    \begin{aligned}[t]
+      a = 2\\
+      b = 3\\
+      c = 4
+    \end{aligned}
+    \qquad\qquad
+    \begin{aligned}[t]
+      -2a + 5b -xc = 3\\
+      -4 + 15 - xc = 3\\
+      xc = 8
+    \end{aligned}
+  \end{equation*}
+  \begin{align*}
+    x = 2
+  \end{align*}
+\end{proof}
+
+\end{document}

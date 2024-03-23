@@ -1,0 +1,267 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Define Article %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Using Packages %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{empheq}
+\usepackage{mdframed}
+\usepackage{booktabs}
+\usepackage{lipsum}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{psfrag}
+\usepackage{pgfplots}
+\usepackage{bm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Other Settings
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% Page Setting %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\geometry{a4paper}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% Define some useful colors %%%%%%%%%%%%%%%%%%%%%%%%%%
+\definecolor{ocre}{RGB}{243,102,25}
+\definecolor{mygray}{RGB}{243,243,244}
+\definecolor{deepGreen}{RGB}{26,111,0}
+\definecolor{shallowGreen}{RGB}{235,255,255}
+\definecolor{deepBlue}{RGB}{61,124,222}
+\definecolor{shallowBlue}{RGB}{235,249,255}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% Define an orangebox command %%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand\orangebox[1]{\fcolorbox{ocre}{mygray}{\hspace{1em}#1\hspace{1em}}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% English Environments %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newtheoremstyle{mytheoremstyle}{3pt}{3pt}{\normalfont}{0cm}{\rmfamily\bfseries}{}{1em}{{\color{black}\thmname{#1}~\thmnumber{#2}}\thmnote{\,--\,#3}}
+\newtheoremstyle{myproblemstyle}{3pt}{3pt}{\normalfont}{0cm}{\rmfamily\bfseries}{}{1em}{{\color{black}\thmname{#1}~\thmnumber{#2}}\thmnote{\,--\,#3}}
+\theoremstyle{mytheoremstyle}
+\newmdtheoremenv[linewidth=1pt,backgroundcolor=shallowGreen,linecolor=deepGreen,leftmargin=0pt,innerleftmargin=20pt,innerrightmargin=20pt,]{theorem}{Theorem}[section]
+\theoremstyle{mytheoremstyle}
+\newmdtheoremenv[linewidth=1pt,backgroundcolor=shallowBlue,linecolor=deepBlue,leftmargin=0pt,innerleftmargin=20pt,innerrightmargin=20pt,]{definition}{Definition}[section]
+\theoremstyle{myproblemstyle}
+\newmdtheoremenv[linecolor=black,leftmargin=0pt,innerleftmargin=10pt,innerrightmargin=10pt,]{problem}{Problem}[section]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Plotting Settings %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepgfplotslibrary{colorbrewer}
+\pgfplotsset{width=8cm,compat=1.9}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Title & Author %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{Faktöriyel}
+\author{Halil Yiğit KOÇHAN}
+\date{November 22, 2023}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+    \maketitle
+
+\begin{itemize}
+  \item 1'den n'ye kadar olan sayılar "$ n! $"
+  \item Negatif sayıların faktöriyeli yoktur.
+  \item $ 0! = 1 $
+  \item $ 1! = 1 $
+  \item $ 2! = 2 $
+  \item $ 3! = 6 $
+  \item $ 4! = 24 $
+  \item $ 5! = 120 $
+  \item $ 6! = 720 $
+  \item ...
+  \item $ n! = n(n - 1) $
+\end{itemize}
+
+\begin{problem}[$ (n - 2)! + 4 - 2n + 3! = ? $]
+\end{problem}
+
+\begin{proof}[\textit{ Sol. }]
+  \begin{equation*}
+    \begin{aligned}[t]
+      n - 2 \ge 0\\
+      n \ge 2
+    \end{aligned}
+    \qquad\qquad
+    \begin{aligned}[t]
+      4 - 2n \le 0\\
+      4 \le 2n\\
+      2 \le n
+    \end{aligned}
+  \end{equation*}
+  \begin{align*}
+    1 + 1 + 6 = 8
+  \end{align*}
+\end{proof}
+
+\begin{problem}[$ 1! + 2! + 3! + ... + 999! $ birler basamağı?]
+\end{problem}
+
+\begin{proof}[\textit{ Sol. }]
+  \begin{align*}
+    &1 + 2 + 6 + 24 + ..0 + ..0 + ..0 = 33\\
+    &\text{(10 ile bölümünden kalan)}
+  \end{align*}
+\end{proof}
+
+\begin{problem}[$ 0! + 4! + 8! + 12! + ... + 100! $ onlar basamağı?]
+\end{problem}
+
+\begin{proof}[\textit{ Sol. }]
+  \begin{align*}
+    6! &= 720\\
+    7 \times 8 &= 56\\
+    8! = 8.7.6! &= 720 \times 56\\
+    720 \mod 100 &= 20\\
+    20 \times 56 &= 1120\\
+    1120 \mod 100 &= 20\\
+    1 + 24 + 20 &= 45
+  \end{align*}
+  \begin{align*}
+    &1 + 24 + .20 + .00 + ... + .00 = 45\\
+    &\text{(100 ile bölümünden kalan)}
+  \end{align*}
+\end{proof}
+
+\begin{problem}[$ 23! $ içinde en çok kaç tane $ 2 $ çarpanı vardır?]
+  ($ 23! = 2n \times A $ ise $ n_{max} $)
+\end{problem}
+
+\begin{proof}[\textit{ Sol. }]
+  \begin{equation*}
+    \begin{aligned}[t]
+      23 \div 2 = 11\\
+      11 \div 2 = 5\\
+    \end{aligned}
+    \qquad\qquad
+    \begin{aligned}[t]
+      5 \div 2 = 2\\
+      2 \div 2 = 1
+    \end{aligned}
+  \end{equation*}
+  \begin{align*}
+    11 + 5 + 2 + 1 = 19
+  \end{align*}
+\end{proof}
+
+\begin{problem}[$ 34! = 6^n \times A $, $ n_{max} = ? $]
+\end{problem}
+
+\begin{proof}[\textit{ Sol. }]
+  \begin{equation*}
+    \begin{aligned}[t]
+      6^n = 2^n \times \underline 3^n
+    \end{aligned}
+    \qquad\qquad
+    \begin{aligned}[t]
+      34 \div 3 = 11\\
+      11 \div 3 = 3\\
+      3 \div 3 = 1
+    \end{aligned}
+  \end{equation*}
+  \begin{align*}
+    11 + 3 + 1 = 15
+  \end{align*}
+\end{proof}
+
+\pagebreak
+\begin{problem}[$ 30! = 24^n \times A $, $ n_{max} = ? $]
+\end{problem}
+
+\begin{proof}[\textit{ Sol. }]
+  \begin{align*}
+    24^n &= \underline 2^3n \times 3^n
+  \end{align*}
+  \begin{equation*}
+    \begin{aligned}[t]
+      30 \div 2 &= 15\\
+      15 \div 2 &= 7\\
+      7 \div 2 &= 3\\
+      3 \div 2 &= 1
+    \end{aligned}
+    \qquad\qquad
+    \begin{aligned}[t]
+      15 + 7 + 3 + 1 &= 26\\
+      3n &= 26\\
+      n &\cong 8
+    \end{aligned}
+  \end{equation*}
+\end{proof}
+
+\begin{problem}[$ \frac{25! + 26!}{3^n} \in {Z} $, $ n_{max} = ? $]
+\end{problem}
+
+\begin{proof}[\textit{ Sol. }]
+  \begin{equation*}
+    \begin{aligned}[t]
+      &25!(1 + 26)\\
+      &25!(27)\\
+      &25!(\underline 3^3) \div 3
+    \end{aligned}
+    \qquad\qquad
+    \begin{aligned}[t]
+      25 \div 3 = 8\\
+      8 \div 3 = 2
+    \end{aligned}
+  \end{equation*}
+  \begin{align*}
+    8 + 2 = 10\\
+    10 + 3 = 13
+  \end{align*}
+\end{proof}
+
+\begin{problem}[$ 29! $ içinde kaç tane $ 10 $ çarpanı vardır?]
+  ($ 29! = 10^n \times A $, $ n = ? $) ($ 29! - 1 $'in sondan kaç basamağı $ 9 $'dur?)
+\end{problem}
+
+\begin{proof}[\textit{ Sol. }]
+  \begin{align*}
+    10^n &= 2^n \times \underline 5^n\\
+    29 \div 5 &= 5\\
+    5 \div  5 &= 1
+  \end{align*}
+  \begin{align*}
+    5 + 1 = 6
+  \end{align*}
+\end{proof}
+
+\begin{problem}[$ 1 \times 1! + 2 \times 2! + 3 \times 3! + ... + 256 \times 256! $ sondan kaç basamağı $ 9 $'dur?]
+\end{problem}
+
+\begin{proof}[\textit{ Sol. }]
+  \begin{align*}
+    \sum_{k = 1}^{n}k \times k! = (n + 1)! - 1 \quad (257! - 1)
+  \end{align*}
+  \begin{align*}
+    257 \div 5 &= 51\\
+    51 \div 5 &= 10\\
+    10 \div 5 &= 2\\
+    &= 63
+  \end{align*}
+\end{proof}
+
+\begin{problem}[$ \frac{24!}{2^a} $ çift sayı ise $ a_{max} = ? $]
+\end{problem}
+
+\begin{proof}[\textit{ Sol. }]
+  \begin{equation*}
+    \begin{aligned}[t]
+      24 \div 2 = 12\\
+      12 \div 2 = 6
+    \end{aligned}
+    \qquad\qquad
+    \begin{aligned}[t]
+      6 \div 2 = 3\\
+      3 \div 2 = 1
+    \end{aligned}
+  \end{equation*}
+  \begin{gather*}
+    12 + 6 + 3 + 1 = 22\\
+    \text{Paydanın çift olması için } a_{max} = 22 - 1 = 21
+  \end{gather*}
+\end{proof}
+
+\end{document}

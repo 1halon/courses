@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+fswatch -m poll_monitor --event Updated main.cpp | xargs -o -I{} -n1 make $1
